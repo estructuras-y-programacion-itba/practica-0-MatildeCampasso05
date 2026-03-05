@@ -53,17 +53,58 @@ def escalera(tirar):
     else:
         esca=False
 
+def full(tirar):
+    sr=sinrep(tirar)
+    contadores=[]
+    for i in tirar:
+        cont=0
+        for j in sinrep:
+            if i==j:
+                cont+=1
+    f=False
+    ordenar(contadores)
+    if contadores[-1]==3 and contadores[-2]==2:
+        f=True
+    return f
+
+def poker (tirar):
+    sr=sinrep(tirar)
+    contadores=[]
+    for i in tirar:
+        cont=0
+        for j in sinrep:
+            if i==j:
+                cont+=1
+    p=False
+    ordenar(contadores)
+    if contadores[-1]==4:
+        p=True
+    return p
+
+def generala (tirar):
+    sr=sinrep(tirar)
+    contadores=[]
+    for i in tirar:
+        cont=0
+        for j in sinrep:
+            if i==j:
+                cont+=1
+    g=False
+    if contadores[-1]==5:
+        g=True
+
 tirar=tirada()
 print(tirar)
 tir=0
-while tir<3:
-    jugar=input("desea seguir tirando?")
-    if jugar[0]=="s" or jugar[0]=="S":
-        tir+=1
-        poss=definir_tirada(tirar)
-        print(poss)
-        cambiar_posicion(tirar, poss)
-    else:
-        tir=3
+if generala(tirar)==False:
+    while tir<3:
+        jugar=input("desea seguir tirando?")
+        if jugar[0]=="s" or jugar[0]=="S":
+            tir+=1
+            poss=definir_tirada(tirar)
+            print(poss)
+            cambiar_posicion(tirar, poss)
+        else:
+            tir=3
 
     
