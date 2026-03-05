@@ -32,6 +32,27 @@ def cambiar_posicion(tirar, poss):
                 tirar[i]=num
     print(tirar)
 
+def sinrep(lista):
+    nueva=[]
+    for j in lista:
+        for i in nueva:
+            if j!=i:
+                nueva.append(j)
+    return nueva
+
+def ordenar(lista):
+    for i in range(len(lista)):
+        for j in range(i, len(lista)):
+            if lista[i]>lista[j]:
+                lista[i], lista[j]==lista[j], lista[i]
+
+def escalera(tirar):
+    sr=sinrep(tirar)
+    if len(sr)==5:
+        esca=True
+    else:
+        esca=False
+
 tirar=tirada()
 print(tirar)
 tir=0
